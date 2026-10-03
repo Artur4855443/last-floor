@@ -1,0 +1,399 @@
+/* ==========================================================
+   ПОСЛЕДНИЙ ЭТАЖ — STYLE.CSS
+   ========================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.78), rgba(5, 5, 10, 0.92)),
+        radial-gradient(circle at center, #30303a 0%, #09090d 70%);
+
+    color: #eeeeee;
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.015) 0px,
+            rgba(255,255,255,0.015) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+.game-container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 850px;
+
+    padding: 35px;
+
+    background: rgba(12, 12, 17, 0.94);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 40px rgba(0, 0, 0, 0.8),
+        0 0 100px rgba(100, 0, 0, 0.12);
+
+    backdrop-filter: blur(8px);
+}
+
+h1 {
+    text-align: center;
+
+    font-size: 42px;
+    letter-spacing: 7px;
+
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    color: #eeeeee;
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.2),
+        0 0 30px rgba(180, 0, 0, 0.3);
+}
+
+h2 {
+    color: #dddddd;
+}
+
+h3 {
+    color: #bbbbbb;
+}
+
+.location {
+    text-align: center;
+
+    padding: 12px;
+
+    margin-bottom: 25px;
+
+    background: rgba(120, 0, 0, 0.2);
+
+    border: 1px solid rgba(180, 0, 0, 0.25);
+
+    border-radius: 8px;
+
+    letter-spacing: 3px;
+
+    color: #d6d6d6;
+}
+
+.inventory {
+    margin-bottom: 25px;
+
+    padding: 15px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border-left: 3px solid #8d1b1b;
+
+    border-radius: 5px;
+}
+
+.inventory h3 {
+    margin-top: 0;
+}
+
+.story {
+    line-height: 1.7;
+
+    color: #cfcfcf;
+
+    font-size: 17px;
+}
+
+#result {
+    margin-top: 30px;
+
+    padding: 25px;
+
+    min-height: 100px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius: 10px;
+}
+
+.welcome {
+    text-align: center;
+
+    color: #aaaaaa;
+}
+
+.buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+button {
+    padding: 13px 20px;
+
+    border: 1px solid rgba(180, 180, 180, 0.15);
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #24242b,
+            #15151a
+        );
+
+    color: #eeeeee;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s,
+        background 0.2s,
+        box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    background:
+        linear-gradient(
+            180deg,
+            #3a2020,
+            #211313
+        );
+
+    box-shadow:
+        0 0 15px rgba(150, 0, 0, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+input {
+    width: 220px;
+
+    padding: 12px 15px;
+
+    margin-top: 10px;
+
+    background: #0b0b0f;
+
+    color: #ffffff;
+
+    border: 1px solid #444;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    font-size: 16px;
+
+    text-align: center;
+}
+
+input:focus {
+    border-color: #8d1b1b;
+
+    box-shadow:
+        0 0 10px rgba(150, 0, 0, 0.25);
+}
+
+.note {
+    margin: 20px 0;
+
+    padding: 18px;
+
+    background:
+        rgba(100, 0, 0, 0.12);
+
+    border-left: 3px solid #8d1b1b;
+
+    color: #dddddd;
+
+    line-height: 1.7;
+
+    border-radius: 5px;
+
+    font-family: Georgia, serif;
+}
+
+hr {
+    border: none;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    margin: 25px 0;
+}
+
+/* ==========================================================
+   ХОРРОР-ЭФФЕКТЫ
+   ========================================================== */
+
+.horror-flash {
+    animation: horrorFlash 0.3s;
+}
+
+@keyframes horrorFlash {
+    0% {
+        background-color: #000;
+    }
+
+    30% {
+        background-color: #650000;
+    }
+
+    100% {
+        background-color: #000;
+    }
+}
+
+@keyframes scareZoom {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+
+    30% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#jumpscare {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999999;
+
+    background: #000;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#jumpscare.active {
+    display: flex;
+}
+
+.scare-face {
+    font-size: 180px;
+
+    animation: scareZoom 0.2s;
+
+    filter:
+        drop-shadow(0 0 20px red)
+        drop-shadow(0 0 50px darkred);
+}
+
+/* ==========================================================
+   АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНА
+   ========================================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .game-container {
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: 28px;
+        letter-spacing: 4px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    input {
+        width: 100%;
+    }
+}
+@keyframes scaryZoom {
+    from {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes horrorShake {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    20% {
+        transform: translate(-12px, 6px);
+    }
+
+    40% {
+        transform: translate(12px, -6px);
+    }
+
+    60% {
+        transform: translate(-8px, -5px);
+    }
+
+    80% {
+        transform: translate(8px, 5px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Последний этаж</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <main class="game-container">
+
+        <h1>ПОСЛЕДНИЙ ЭТАЖ</h1>
+
+        <div class="location">
+            🏢 ПОДЪЕЗД
+        </div>
+
+        <div class="inventory">
+            <h3>🎒 ИНВЕНТАРЬ</h3>
+            <div id="inventory">Пусто</div>
+        </div>
+
+        <div class="story">
+            <p>Вы стоите в старом заброшенном подъезде.</p>
+
+            <p>
+                Лампочка над головой мигает,
+                иногда полностью погружая помещение во тьму.
+            </p>
+
+            <p>
+                Перед вами находятся лифт и лестница.
+            </p>
+        </div>
+
+        <div class="buttons">
+
+            <button onclick="lookAtLift()">
+                🛗 Осмотреть лифт
+            </button>
+
+            <button onclick="lookAtStairs()">
+                🪜 Осмотреть лестницу
+            </button>
+
+        </div>
+
+        <section id="result">
+
+            <div class="welcome">
+
+                <h2>🌑 Добро пожаловать</h2>
+
+                <p>Здесь давно никто не живёт.</p>
+
+                <p>
+                    Но почему-то кажется,
+                    что кто-то всё ещё наблюдает за вами.
+                </p>
+
+                <p>
+                    Исследуйте подъезд и найдите путь
+                    на последний этаж.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+    
+<audio id="horrorMusic" src="/static/music.mp3" loop></audio>
+<audio id="footstepsSound" src="/static/footsteps.mp3"></audio>
+<audio id="doorSound" src="/static/door.mp3"></audio>
+<audio id="screamSound" src="/static/scream.mp3"></audio>
+
+    <script src="/static/game.js"></script>
+
+</body>
+
+</html>
